@@ -1,0 +1,7 @@
+[project]
+name = "python_practice"
+version = "0.1.0"
+description = "Учебный Python-проект"
+dependencies = [
+    "requests==2.34.2",
+]
