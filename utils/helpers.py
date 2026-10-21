@@ -1,7 +1,8 @@
-def greet(name: str) -> str:
-    return f"Привет, {name.lower()}!"
+def calculate(a, b):
+    result = a * b
+    result += 5
+    return result
 
-print(greet("Роман"))
 
-def farewell(name: str) -> str:
-    return f"До свидания, {name}!"
+number = calculate(4, 6)
+print(number)

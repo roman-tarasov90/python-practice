@@ -1,5 +1,7 @@
-import os
+def get_user_name(user):
+    return user["name"]
 
-secret = os.getenv("MY_SECRET")
 
-print(secret)
+def make_greeting(user):
+    name = get_user_name(user)
+    return f"Привет, {name}!"
