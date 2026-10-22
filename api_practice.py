@@ -1,14 +1,6 @@
-from urllib.request import urlopen
-from urllib.error import HTTPError
-import json
+import requests
 
-try:
-    with urlopen("https://jsonplaceholder.typicode.com/posts/999999") as response:
-        print("Статус:", response.status)
-        data = json.loads(response.read().decode("utf-8"))
-        print(data["title"])
-except HTTPError as error:
-    if error.code == 404:
-        print("Публикация не найдена")
-    else:
-        print(error.code)
+with requests.get("https://jsonplaceholder.typicode.com/posts/2", timeout=10) as response:
+    print("Статус:", response.status_code)
+    data = response.json()
+    print(data["title"])
