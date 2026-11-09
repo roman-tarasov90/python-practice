@@ -1,11 +1,12 @@
 import requests
 
-headers = {
-    "Accept": "application/json"
-}
+post_id = 5
+url = f"https://jsonplaceholder.typicode.com/posts/{post_id}"
 
-response = requests.get("https://jsonplaceholder.typicode.com/posts/1", headers=headers, timeout=10)
+response = requests.get(url, timeout=10)
 
-print(response.json()["title"])
+post = response.json()
+
 print(response.status_code)
-print(response.headers["Content-Type"])
+print(post["title"])
+print(post["body"])
