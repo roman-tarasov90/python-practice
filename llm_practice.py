@@ -13,4 +13,9 @@ response = client.responses.create(
     input="Ответь одним словом: столица Франции?"
 )
 
-print(response.output_text)
+print(f"Ответ модели: {response.output_text}")
+print(f"Модель: {response.model}")
+print(f"Статус: {response.status}")
+print(f"Входные токены: {response.usage.input_tokens}")
+print(f"Выходные токены:  {response.usage.output_tokens}")
+print(f"Всего токенов:{response.usage.total_tokens}")
